@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+  overflow: hidden;
+}
+.Cargando {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 0.2rem;
+  bottom: 0;
+}
+.lineaCarga {
+  height: 100%;
+  background: rgb(69, 44, 99);
+  background: linear-gradient(
+    90deg,
+    rgba(69, 44, 99, 1) 0%,
+    rgba(75, 0, 130, 1) 10%,
+    rgba(230, 230, 250, 1) 20%,
+    rgba(221, 160, 221, 1) 30%,
+    rgba(128, 0, 128, 1) 40%,
+    rgba(51, 0, 111, 1) 50%,
+    rgba(29, 17, 96, 1) 60%,
+    rgba(102, 45, 145, 1) 70%,
+    rgba(216, 191, 216, 1) 80%,
+    rgba(238, 130, 238, 1) 90%,
+    rgba(114, 14, 158, 1) 100%
+  );
+  animation: cargando 2.5s infinite;
+}
+
+.Arriba {
+  width: 101%;
+  display: flex;
+}
+.Abajo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: var(--colorSecundario);
+  grid-gap: 1rem;
+  padding: 1rem;
+  width: calc(100% - 2rem);
+}
+@media (max-width: 768px) {
+  .Abajo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Abajo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes cargando {
+  0% {
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translate(100%);
+  }
+}
